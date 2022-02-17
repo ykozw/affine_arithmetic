@@ -1,5 +1,5 @@
 # About
-**Hobby** implementation of [Affine arithmetic]() and [Interval arithmetic]().
+**Hobby** implementation of [Affine arithmetic](https://en.wikipedia.org/wiki/Affine_arithmetic) and [Interval arithmetic](https://en.wikipedia.org/wiki/Interval_arithmetic).
 
 | Interval  arithmetic           |  Affine arithmetic|
 :-------------------------:|:-------------------------:
