@@ -297,13 +297,15 @@ public:
             return AA(std::sqrt(cv_));
         }
         const float r = rad();
+        // 区間
         float a = cv_ - r;
         float b = cv_ + r;
-        float dNeg = 0.0;
+        float dneg = 0.0;
+        // 区間での値
         float fa;
         if (a < 0.0f)
         {
-            dNeg = -a / 2.0f;
+            dneg = -a / 2.0f;
             a = 0.0f;
             fa = 0.0f;
         }
@@ -317,10 +319,10 @@ public:
         const float dzeta = 0.5f * fb - delta;
         //
         AA ret;
-        ret.cv_ = alpha * (cv_ + dNeg) + dzeta;
+        ret.cv_ = alpha * (cv_ + dneg) + dzeta;
         ret.deviations_ = deviations_;
         //
-        const float alpha2 = alpha - dNeg / rad();
+        const float alpha2 = alpha - dneg / rad();
         for (auto& [k, v] : ret.deviations_)
         {
             v *= alpha2;
@@ -336,8 +338,10 @@ public:
             return AA(1.0f / aa.cv_);
         }
         const float r = aa.rad();
+        // 区間
         const float a = aa.cv_ - r;
         const float b = aa.cv_ + r;
+        // 区間での値
         const float fa = 1.0f / a;
         const float fb = 1.0f / b;
         // 傾き
